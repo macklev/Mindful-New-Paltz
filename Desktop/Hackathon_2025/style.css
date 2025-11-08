@@ -1,0 +1,200 @@
+
+body {
+  font-family: 'Garamond', serif;
+  background: #fff7d7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #e09b5e;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+
+/* Main layout: sidebar + content */
+#mainContent {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Sidebar / filters */
+#mainContent .sidebar {
+  flex: 0 0 220px; /* fixed width */
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* Filters container: vertical stack */
+#mainContent .filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Button group layout */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Filter buttons */
+.season-btn, .type-btn, .price-btn, .distance-btn {
+  background-color: #e6e6e6;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.season-btn:hover, .type-btn:hover, .price-btn:hover, .distance-btn:hover {
+  background-color: #ccc;
+}
+
+.season-btn.active { background-color: #4b9e8f; color: white; }
+.type-btn.active { background-color: #f4a261; color: white; }
+.price-btn.active { background-color: #e76f51; color: white; }
+.distance-btn.active { background-color: #2a9d8f; color: white; }
+
+/* Activity container on right */
+#activityContainer {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Activity card styling */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 250px;
+  text-align: center;
+}
+
+/* ==============================
+   PROGRESS PAGE STYLES (progress.html)
+============================== */
+#progressPage {
+  padding: 1rem;
+}
+
+/* Each type row */
+#progressPage .type-container {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+#progressPage .type-container:hover {
+  background-color: #f9f9f9;
+}
+
+/* Circle wrapper */
+#progressPage .circle-wrapper {
+  position: relative;
+  flex: 0 0 120px;
+  height: 120px;
+  margin-right: 2rem;
+}
+
+/* Circular SVG */
+#progressPage .circular-svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+#progressPage .circular-bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 12;
+}
+
+#progressPage .circular-progress {
+  fill: none;
+  stroke: #4b9e8f;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+/* Circle label (centered) */
+#progressPage .circle-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2rem;
+  color: #333;
+  pointer-events: none;
+}
+
+/* Right side description */
+#progressPage .type-info {
+  flex: 1;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+#progressPage .type-info p {
+  margin: 0;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  #mainContent {
+    flex-direction: column;
+  }
+
+  #mainContent .sidebar {
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #progressPage .type-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #progressPage .circle-wrapper {
+    margin-bottom: 0.5rem;
+  }
+
+  #progressPage .circle-label {
+    font-size: 0.95rem;
+  }
+
+  #progressPage .type-info {
+    font-size: 0.95rem;
+  }
+}
