@@ -28,11 +28,11 @@ header {
 
 header h1 {
   font-size: 2rem;
-  color: #2a5d34;
+  color: #333;
 }
 
 .login-btn {
-  background-color: #2a5d34;
+  background-color: #e09b5e;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -43,7 +43,7 @@ header h1 {
 }
 
 .login-btn:hover {
-  background-color: #387f46;
+  background-color: #916641;
 }
 
 /* Main section */
@@ -94,7 +94,7 @@ main p {
 
 .cta-btn {
   margin-top: 2rem;
-  background-color: #2a5d34;
+  background-color: #e09b5e;
   color: white;
   padding: 0.8rem 2rem;
   border: none;
@@ -105,7 +105,7 @@ main p {
 }
 
 .cta-btn:hover {
-  background-color: #387f46;
+  background-color: #916641;
 }
 
 /* Footer */
@@ -115,7 +115,7 @@ footer {
   position: relative;
   background-color: rgba(230, 244, 234, 0.6);
   backdrop-filter: blur(10px);
-  color: #2a5d34;
+  color: #333;
   border-top: 1px solid rgba(200, 230, 200, 0.4);
   z-index: 5;
 }
@@ -169,7 +169,7 @@ footer {
   padding: 0.8rem;
   border: none;
   border-radius: 8px;
-  background: #3c91e6;
+  background: #e09b5e;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -177,7 +177,7 @@ footer {
 }
 
 .modal-content button:hover {
-  background: #2b6fbf;
+  background: #916641;
 }
 
 .error-msg {

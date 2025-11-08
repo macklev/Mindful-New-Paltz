@@ -10,8 +10,9 @@
   <header>
     <h1>My Activity Progress</h1>
     <nav>
-      <a href="index.html">← Back to Activities</a>
-    </nav>
+    <a href="index.html">Activities</a>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </nav>
   </header>
 
   <main id="progressPage">
@@ -20,5 +21,49 @@
   </main>
 
   <script src="progress.js"></script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+  // Firebase config (same as in landpagecode.js)
+  const firebaseConfig = {
+    apiKey: "AIzaSyAkDznWz6eGV1ccnzmhFK3Ou4PyL3X_68s",
+    authDomain: "mindful-new-paltz.firebaseapp.com",
+    projectId: "mindful-new-paltz",
+  };
+
+  // Initialize Firebase only once
+  let app;
+  try {
+    app = initializeApp(firebaseConfig);
+  } catch (e) {
+    // ignore "already exists" error
+  }
+
+  const auth = getAuth();
+
+  // Redirect to landing page if user not logged in
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.location.href = "Landingpage.html"; // redirect if logged out
+    }
+  });
+
+  // Handle logout button click
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        console.log("✅ Logged out successfully");
+        window.location.href = "Landingpage.html";
+      } catch (error) {
+        console.error("Error logging out:", error);
+        alert("Error logging out. Try again.");
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
