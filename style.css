@@ -1,200 +1,202 @@
-
-body {
-  font-family: 'Garamond', serif;
-  background: #fff7d7;
-  color: #333;
+/* Basic reset and fonts */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
+body {
+  background-color: #e6f4ea;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
 header {
-  background: #e09b5e;
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-
-/* Main layout: sidebar + content */
-#mainContent {
   display: flex;
-  gap: 2rem;
-  padding: 1rem;
-}
-
-/* Sidebar / filters */
-#mainContent .sidebar {
-  flex: 0 0 220px; /* fixed width */
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-
-/* Filters container: vertical stack */
-#mainContent .filters {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Button group layout */
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* Filter buttons */
-.season-btn, .type-btn, .price-btn, .distance-btn {
-  background-color: #e6e6e6;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.season-btn:hover, .type-btn:hover, .price-btn:hover, .distance-btn:hover {
-  background-color: #ccc;
-}
-
-.season-btn.active { background-color: #4b9e8f; color: white; }
-.type-btn.active { background-color: #f4a261; color: white; }
-.price-btn.active { background-color: #e76f51; color: white; }
-.distance-btn.active { background-color: #2a9d8f; color: white; }
-
-/* Activity container on right */
-#activityContainer {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-/* Activity card styling */
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  width: 250px;
-  text-align: center;
-}
-
-/* ==============================
-   PROGRESS PAGE STYLES (progress.html)
-============================== */
-#progressPage {
-  padding: 1rem;
-}
-
-/* Each type row */
-#progressPage .type-container {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 0;
-  cursor: pointer;
-  padding: 1rem;
-  transition: background-color 0.2s ease;
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-#progressPage .type-container:hover {
-  background-color: #f9f9f9;
-}
-
-/* Circle wrapper */
-#progressPage .circle-wrapper {
+  padding: 2rem 5%;
+  background: rgba(230, 244, 234, 0.6);
+  backdrop-filter: blur(10px);
   position: relative;
-  flex: 0 0 120px;
-  height: 120px;
-  margin-right: 2rem;
+  z-index: 10;
+  border-bottom: 1px solid rgba(200, 230, 200, 0.4);
 }
 
-/* Circular SVG */
-#progressPage .circular-svg {
-  width: 120px;
-  height: 120px;
-  transform: rotate(-90deg);
+header h1 {
+  font-size: 2rem;
+  color: #2a5d34;
 }
 
-#progressPage .circular-bg {
-  fill: none;
-  stroke: #e6e6e6;
-  stroke-width: 12;
+.logout-btn {
+  background-color: #2a5d34;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#progressPage .circular-progress {
-  fill: none;
-  stroke: #4b9e8f;
-  stroke-width: 12;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 1s ease;
+.logout-btn:hover {
+  background-color: #387f46;
 }
 
-/* Circle label (centered) */
-#progressPage .circle-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Main section */
+main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.2rem;
-  color: #333;
-  pointer-events: none;
+  padding: 6rem 5% 3rem;
+  background: url('mohonk.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: #ffffff;
 }
 
-/* Right side description */
-#progressPage .type-info {
-  flex: 1;
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5rem;
-  font-weight: 500;
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 70, 83, 0.6); /* darker overlay */
+  z-index: 1;
 }
 
-#progressPage .type-info p {
-  margin: 0;
+main h2,
+main p,
+.cta-btn {
+  position: relative;
+  z-index: 2;
 }
 
-/* ==============================
-   RESPONSIVE DESIGN
-============================== */
-@media (max-width: 768px) {
-  #mainContent {
-    flex-direction: column;
-  }
-
-  #mainContent .sidebar {
-    flex: 1 1 auto;
-    margin-bottom: 1.5rem;
-  }
+main h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 600px) {
-  #progressPage .type-container {
-    flex-direction: column;
-    align-items: flex-start;
+main p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-btn {
+  margin-top: 2rem;
+  background-color: #2a5d34;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #387f46;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  background-color: rgba(230, 244, 234, 0.6);
+  backdrop-filter: blur(10px);
+  color: #2a5d34;
+  border-top: 1px solid rgba(200, 230, 200, 0.4);
+  z-index: 5;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #3c91e6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background: #2b6fbf;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width:768px) {
+  header h1 {
+    font-size: 1.5rem;
   }
 
-  #progressPage .circle-wrapper {
-    margin-bottom: 0.5rem;
+  main h2 {
+    font-size: 2rem;
   }
 
-  #progressPage .circle-label {
-    font-size: 0.95rem;
-  }
-
-  #progressPage .type-info {
-    font-size: 0.95rem;
+  main p {
+    font-size: 1rem;
   }
 }
