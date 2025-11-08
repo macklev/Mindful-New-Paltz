@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindPath</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="istyle.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
     <h1>MindPath</h1>
-    <button class="login-btn" id="openModal">Login</button>
+    <p>Where New Paltz students can find activities and groups to support their mental health and become more involved in the community.</p>
   </header>
 
-  <main>
-    <h2>Discover the Best of New Paltz</h2>
-    <p>
-      MindPath helps you explore fun, meaningful activities in the New Paltz, NY area. Track your progress through curated tracks focused on staying active, contributing to your community, and improving your mental well-being.
-    </p>
-    <button class="cta-btn">Get Started</button>
+  <main id="mainContent">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <div class="filters">
+        <div class="button-group">
+          <h3>Season</h3>
+          <button class="season-btn" data-season="Fall">Fall</button>
+          <button class="season-btn" data-season="Winter">Winter</button>
+          <button class="season-btn" data-season="Spring">Spring</button>
+          <button class="season-btn" data-season="Summer">Summer</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Type</h3>
+          <button class="type-btn" data-type="Nature">Nature</button>
+          <button class="type-btn" data-type="Movement">Movement</button>
+          <button class="type-btn" data-type="Community">Community</button>
+          <button class="type-btn" data-type="Service">Service</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Price</h3>
+          <button class="price-btn" data-price="Free">Free</button>
+          <button class="price-btn" data-price="$">$</button>
+          <button class="price-btn" data-price="$$">$$</button>
+          <button class="price-btn" data-price="$$$">$$$</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Distance</h3>
+          <button class="distance-btn" data-distance="On campus">On campus</button>
+          <button class="distance-btn" data-distance="In New Paltz">In New Paltz</button>
+          <button class="distance-btn" data-distance="Hudson Valley">Hudson Valley</button>
+        </div>
+      </div>
+    </aside>
+
+    <section id="activityContainer"></section>
   </main>
 
-  <footer>
-    &copy; 2025 MindPath. All rights reserved.
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="loginModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h3>Login</h3>
-      <div class="error-msg" id="errorMsg"></div>
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
-      <button id="loginBtn">Login</button>
-    </div>
-  </div>
-
-  <script type="module" src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
