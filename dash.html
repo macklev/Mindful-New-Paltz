@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindPath Dashboard</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,10 +13,50 @@
     <button class="logout-btn" id="logoutBtn">Logout</button>
   </header>
 
-  <main>
-    <h2>Welcome to your Dashboard!</h2>
-    <p>Here you can track your progress, see activities, and explore New Paltz.</p>
+    <main id="mainContent">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <div class="filters">
+        <div class="button-group">
+          <h3>Season</h3>
+          <button class="season-btn" data-season="Fall">Fall</button>
+          <button class="season-btn" data-season="Winter">Winter</button>
+          <button class="season-btn" data-season="Spring">Spring</button>
+          <button class="season-btn" data-season="Summer">Summer</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Type</h3>
+          <button class="type-btn" data-type="Nature">Nature</button>
+          <button class="type-btn" data-type="Movement">Movement</button>
+          <button class="type-btn" data-type="Community">Community</button>
+          <button class="type-btn" data-type="Service">Service</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Price</h3>
+          <button class="price-btn" data-price="Free">Free</button>
+          <button class="price-btn" data-price="$">$</button>
+          <button class="price-btn" data-price="$$">$$</button>
+          <button class="price-btn" data-price="$$$">$$$</button>
+        </div>
+
+        <div class="button-group">
+          <h3>Distance</h3>
+          <button class="distance-btn" data-distance="On campus">On campus</button>
+          <button class="distance-btn" data-distance="In New Paltz">In New Paltz</button>
+          <button class="distance-btn" data-distance="Hudson Valley">Hudson Valley</button>
+        </div>
+      </div>
+    </aside>
+
+    <section id="activityContainer"></section>
   </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
 
   <footer>
     &copy; 2025 MindPath. All rights reserved.
