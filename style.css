@@ -1,6 +1,4 @@
-/* ==============================
-   GENERAL STYLES
-============================== */
+/*GENERAL STYLES*/
 body {
   font-family: 'Garamond', serif;
   background: #fff7d7;
@@ -47,7 +45,7 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Unified logout button */
+/* logout button */
 .logout-btn {
   appearance: none;
   -webkit-appearance: none;
@@ -78,9 +76,7 @@ header p {
   margin: 0.5rem auto 0 auto;
 }
 
-/* ==============================
-   INDEX PAGE STYLES (Filters + Activities)
-============================== */
+/* INDEX PAGE STYLES*/
 #mainContent {
   display: flex;
   gap: 2rem;
@@ -173,9 +169,7 @@ header p {
   background-color: #397765;
 }
 
-/* ==============================
-   PROGRESS PAGE STYLES
-============================== */
+   /*PROGRESS PAGE STYLES*/
 #progressPage {
   padding: 2rem;
 }
@@ -252,9 +246,7 @@ header p {
   margin: 0;
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
+/*RESPONSIVE*/
 @media (max-width: 900px) {
   #mainContent {
     flex-direction: column;
